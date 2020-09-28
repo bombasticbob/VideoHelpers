@@ -2,7 +2,7 @@
 various 'video helper' utilities and documentation for creating videos and effects
 
 
-* make_lcd_saver_jpegs.c
+## make_lcd_saver_jpegs.c
 
 This utility works with mencoder to create an 'lcd screen saver' video.  Build
 and run instructions are in the source as comments.
@@ -22,7 +22,7 @@ give you the correct behavior, exercising individual pixels.
 
 
 
-* scroll_it.sh
+## scroll_it.sh
 
 These shell scripts require 'Image Magick' to have been installed.  They use
 the 'convert' utility to take a "tall" jpeg image and turn it into a set of
