@@ -5,7 +5,7 @@ if test -z "$1""$2""$3" ; then
   echo where "'"nn"'" is # of jpeg files to fade in/out
   echo and "'"in"'" or "'"out"'" indicates the direction
   echo ""
-  echo File names generated is shit/frame'####'.jpg with seq num starting with "'"mm"'"
+  echo File names generated is jpegs/frame'####'.jpg with seq num starting with "'"mm"'"
   echo '('default 0000')' using "'"d"'" digits '('default 6 digits')'
   exit
 fi
@@ -34,8 +34,8 @@ else
   fi
 fi
 
-rm -rf shit
-mkdir shit
+rm -rf jpegs
+mkdir jpegs
 
 echo $inout $input_file $num_frames $digits $start_seq
 
@@ -67,7 +67,7 @@ while test ${ctr} -lt ${num_frames} ; do
   ctr3=`expr ${num_frames} - 1`
   contrast=`expr 100 \* ${ctr2} / ${ctr3}`
 
-  convert -modulate ${contrast} ${input_file} shit/frame${frameno}.jpg
+  convert -modulate ${contrast} ${input_file} jpegs/frame${frameno}.jpg
 
   ctr=`expr ${ctr} + 1`
 

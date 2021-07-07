@@ -4,7 +4,7 @@ if test -z "$1""$2" ; then
   echo usage:  copy_it.sh filename.jpg "'"nn"'" "'"[mm]"'" "'"d"'"
   echo where "'"nn"'" is # of jpeg files to fade in/out
   echo ""
-  echo File names generated is shit/frame'####'.jpg with seq num starting with "'"mm"'"
+  echo File names generated is jpegs/frame'####'.jpg with seq num starting with "'"mm"'"
   echo '('default 0000')' using "'"d"'" digits '('default 6 digits')'
   exit
 fi
@@ -25,8 +25,8 @@ else
   fi
 fi
 
-rm -rf shit
-mkdir shit
+rm -rf jpegs
+mkdir jpegs
 
 echo $input_file $num_frames $digits $start_seq
 
@@ -49,7 +49,7 @@ while test ${ctr} -lt ${num_frames} ; do
   frameno=`echo ${frm} | awk '{ AA="0000000000"$1; LL=length(AA); print substr(AA,LL-'${dig2}','${digits}'); }'`
 
   # consider hard link
-  cp -p ${input_file} shit/frame${frameno}.jpg
+  cp -p ${input_file} jpegs/frame${frameno}.jpg
 
   ctr=`expr ${ctr} + 1`
 
