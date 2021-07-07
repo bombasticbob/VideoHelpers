@@ -21,15 +21,29 @@ aspect ratio is also correctly assigned so that playing it 'full screen' will
 give you the correct behavior, exercising individual pixels.
 
 
+## copy_it.sh
 
-## scroll_it.sh
+This script copies a single image as multiple files with ascending sequence
+numbers, intended to be compatible with the other scripts.  You can specify
+the starting sequence and number of images (frames).
+
+
+## scroll_it.sh fade_it.sh
 
 These shell scripts require 'Image Magick' to have been installed.  They use
 the 'convert' utility to take a "tall" jpeg image and turn it into a set of
-1280x720 frames, scrolling from the top to the bottom.  If you were to use
-a text editor (let's say Libre Office) to output a "tall" JPEG like this,
-with a width that's appx 1280 pixels, you could use this script to create a
-"scrolling credits" ending for a video.
+frames with unique sequence numbers.
+
+The 'fade_it.sh' utility will fade in or fade out a single image, creating
+a sequence of image files, similar to copy_it.sh, but with varying contrast
+via the 'convert' utility.  This effectively "fades in" or "fades out" an
+image.  This can be useful for title screens.
+
+The 'scroll_it.sh' utility specifically creates a set of 1280x720 frames,
+scrolling from the top to the bottom.  If you were to use a text editor
+(let's say Libre Office) to output a "tall" JPEG image containing the
+text, with a width that's appx 1280 pixels, you could then use this
+script to create a "scrolling credits" ending for a video.
 
 With Libre Office, setting the page length to something large enough
 (let's say 36 inches), with a width of 8 inches, would require you to use a
