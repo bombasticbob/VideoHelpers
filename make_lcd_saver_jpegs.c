@@ -117,7 +117,7 @@ char fn[256];
       int iMod = iFrame % 8;
       int iMod5 = ((iScene - 8) + (iFrame / 128)) % 5; // flip colors every ~16 sec
 
-      snprintf(fn, sizeof(fn), "jpeg_output/frame%06d.jpg\n", iFrame + iScene * 960);
+      snprintf(fn, sizeof(fn), "jpeg_output/frame%06d.jpg", iFrame + iScene * 960);
 
       memset(pBuf, 0, iHeight * iWidth);
 
